@@ -35,7 +35,7 @@ namespace ValueObjectDemo.Types
         public static explicit operator StringEnum(string value) => new StringEnum(value);
     }
 
-    public class StringEnumConverter : Newtonsoft.Json.JsonConverter<StringEnum>
+    public class StringEnumConverter : JsonConverter<StringEnum>
     {
         public override void WriteJson(JsonWriter writer, [AllowNull] StringEnum value, JsonSerializer serializer)
         {
