@@ -2,10 +2,11 @@
 using System;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
+using ValueObjectDemo.Utilities;
 
 namespace ValueObjectDemo.Types
 {
-    [Newtonsoft.Json.JsonConverter(typeof(StringEnumConverter))]
+    [JsonConverter(typeof(StringEnumConverter))]
     public class StringEnum : ValueObject
     {
         private string Value { get; set; }
@@ -14,6 +15,8 @@ namespace ValueObjectDemo.Types
 
         protected StringEnum(string value)
         {
+            Guard.AgainstEmpty(value);
+
             Value = value;
         }
 

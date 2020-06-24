@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using ValueObjectDemo.Utilities;
 
 namespace ValueObjectDemo.Types
 {
@@ -12,6 +13,13 @@ namespace ValueObjectDemo.Types
 
         public ZipCode(string code, string plusFour)
         {
+            #region Validation
+
+            Guard.AgainstEmpty(code);
+            Guard.AgainstEmpty(plusFour);
+
+            #endregion
+
             Code = code;
             PlusFour = plusFour;
         }
