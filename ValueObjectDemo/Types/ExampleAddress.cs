@@ -4,7 +4,7 @@ namespace ValueObjectDemo.Types
 {
     public class ExampleAddress
     {
-        public string StreetAddress { get; }
+        public string StreetAddress { get; } // no property setters are exposed
 
         public string City { get; }
 
@@ -19,6 +19,8 @@ namespace ValueObjectDemo.Types
             State = state;
             ZipCode = zipCode;
         }
+
+        #region Value Object Overrides
 
         public override bool Equals(object obj)
         {
@@ -53,5 +55,7 @@ namespace ValueObjectDemo.Types
         {
             return !(a == b);
         }
+
+        #endregion
     }
 }
