@@ -30,24 +30,5 @@ namespace EntityDemo
 
             Console.ReadLine();
         }
-
-        public Person CreateAPerson()
-        {
-            var person = new Person()
-            {
-                Id = Guid.NewGuid(),
-                Address = new Address()
-                {
-                    Id = Guid.NewGuid(),
-                    StreetAddress = "12345 Sesame Street",
-                    City = "Richmond",
-                    State = "VA",
-                    ZipCode = "23235"
-                },
-                Status = Status.Available
-            };
-
-            return person;
-        }
     }
 }

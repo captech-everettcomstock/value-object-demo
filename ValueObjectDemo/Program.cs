@@ -30,17 +30,5 @@ namespace ValueObjectDemo
 
             Console.ReadLine();
         }
-
-        public Person CreateAPerson()
-        {
-            var person = new Person()
-            {
-                Id = Guid.NewGuid(),
-                Address = new Address("12345 Sesame Street", "Richmond", "VA", new ZipCode("23235", "2180")),
-                Status = Status.Available
-            };
-
-            return person;
-        }
     }
 }
